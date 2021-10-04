@@ -1,7 +1,10 @@
 const inquirer = require('inquirer');
-const Manager = require("./lib/Manager")
+const Manager = require("./lib/Manager");
+const Intern = require("./lib/Intern");
+const Engineer = require("./lib/Engineer");
 const fs = require('fs');
-const util = require("util");
+const htmlGenerator = require("./lib/htmlGenerator");
+// const util = require("util");
 
 const employees = [];
 
@@ -50,8 +53,75 @@ function mainMenu(){
     ]).then(response => {
         if(response.choice == 'Engineer'){
             //run engineer function, similar to manager
+            function addEng() {
+                inquirer.prompt([
+                    {
+                        message: "What is the Engineers's name?",
+                        type: 'input',
+                        name: 'engName'
+                    },
+                    {
+                        message: "What is the Engineers's id?",
+                        type: 'input',
+                        name: 'engId'
+                    },
+                    {
+                        message: "What is the Engineers's email?",
+                        type: 'input',
+                        name: 'engEmail'
+                    },
+                    {
+                        message: "What is the Engineers's Github?",
+                        type: 'input',
+                        name: 'engGithub'
+                    },
+                ]).then(answer => {
+                    console.log(answer)
+                    const newEng = new Engineer(answer.engName, answer.engId, answer.engEmail, answer.engGithub);
+                    console.log(newEng)
+                    console.log(newEng.getName(), newEng.getRole())
+                    employees.push(newEng)
+            
+                    //menu function activates
+                    mainMenu()
+                })
+        }
+            
         }else if(response.choice == 'Intern'){
             //run intern function, similar to manager
+            function addInt() {
+                inquirer.prompt([
+                    {
+                        message: "What is the Interns name?",
+                        type: 'input',
+                        name: 'intName'
+                    },
+                    {
+                        message: "What is the Interns id?",
+                        type: 'input',
+                        name: 'intId'
+                    },
+                    {
+                        message: "What is the Interns email?",
+                        type: 'input',
+                        name: 'intEmail'
+                    },
+                    {
+                        message: "What is the Interns school?",
+                        type: 'input',
+                        name: 'intGithub'
+                    },
+                ]).then(answer => {
+                    console.log(answer)
+                    const newInt = new Intern(answer.intName, answer.intId, answer.intEmail, answer.intGithub);
+                    console.log(newInt)
+                    console.log(newInt.getName(), newEng.getRole())
+                    employees.push(newInt)
+            
+                    //menu function activates
+                    mainMenu()
+                })
+        }
         }else {
             //run a function that builds the HTML
             generateHTML()
