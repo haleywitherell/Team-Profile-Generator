@@ -29,7 +29,7 @@ function addIntern() {
             type: 'input',
             name: 'intGithub'
         },
-    ]).then(answer => {
+    ]).then(answer => { 
         console.log(answer)
         const newInt = new Intern(answer.intName, answer.intId, answer.intEmail, answer.intGithub);
         console.log(newInt)
