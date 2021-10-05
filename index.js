@@ -14,7 +14,7 @@ function makeCard(employee) {
                     <p class="card-text">${employee.name}</p>
                     <p class="card-text">${employee.id}</p>
                     <p class="card-text">${employee.email}</p>
-            </div>
+                </div>
             </div>
         </div>
     `;
