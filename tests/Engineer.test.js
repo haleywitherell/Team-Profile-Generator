@@ -1,6 +1,12 @@
 const Engineer = require("../lib/Engineer");
 
 
+test('If we create a "new" Engineer is should make a new object', () => {
+    const testObj = new Engineer()
+
+    expect(typeof(testObj)).toBe('object')
+})
+
 test('Adding a string to the first paramater creates a value for the property github usermane of the object', () => {
     const testObj = new Engineer('testgithub')
 

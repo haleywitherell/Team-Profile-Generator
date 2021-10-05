@@ -148,6 +148,7 @@ function generateHTML(){
         <title>Test</title>
     </head>
     <body>
+        <header class="jumbotron primary">My Team</header>
         <button class="btn btn-danger">Yes</button>
         <p class='text-white'> Can't see me </p>`
 
