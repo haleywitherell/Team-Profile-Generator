@@ -3,7 +3,6 @@ const Manager = require("./lib/Manager");
 const Intern = require("./lib/Intern");
 const Engineer = require("./lib/Engineer");
 const fs = require('fs');
-// const htmlGenerator = require("./lib/htmlGenerator");
 const util = require("util");
 
 function makeCard(employee) {
@@ -11,8 +10,10 @@ function makeCard(employee) {
         <div class="col-4>
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">${employee.type}</h5>
+                    <p class="card-title">${employee.type}</p>
                     <p class="card-text">${employee.name}</p>
+                    <p class="card-text">${employee.id}</p>
+                    <p class="card-text">${employee.email}</p>
             </div>
             </div>
         </div>
@@ -165,7 +166,6 @@ function generateHTML(){
     <div class="container-fluid">
     <div class="row">
         <header class="jumbotron primary">My Team</header>
-        <button class="btn btn-danger">Yes</button>
         <p class='text-white'> Can't see me </p>`
 
         //for loop for adding to the html syntax
