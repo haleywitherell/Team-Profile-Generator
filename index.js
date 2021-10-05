@@ -6,6 +6,19 @@ const fs = require('fs');
 // const htmlGenerator = require("./lib/htmlGenerator");
 const util = require("util");
 
+function makeCard(employee) {
+    return `
+        <div class="col-4>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">${employee.type}</h5>
+                    <p class="card-text">${employee.name}</p>
+            </div>
+            </div>
+        </div>
+    `;
+}
+
 // add intern function 
 function addIntern() {
     inquirer.prompt([
@@ -33,7 +46,7 @@ function addIntern() {
         console.log(answer)
         const newInt = new Intern(answer.intName, answer.intId, answer.intEmail, answer.intGithub);
         console.log(newInt)
-        console.log(newInt.getName(), newEng.getRole())
+        console.log(newInt.getName(), newInt.getRole())
         employees.push(newInt)
 
         //menu function activates
@@ -131,6 +144,7 @@ function mainMenu(){
             addIntern()
         }else {
             //run a function that builds the HTML
+            console.log(employees)
             generateHTML()
         }
     })
@@ -148,14 +162,19 @@ function generateHTML(){
         <title>Test</title>
     </head>
     <body>
+    <div class="container-fluid">
+    <div class="row">
         <header class="jumbotron primary">My Team</header>
         <button class="btn btn-danger">Yes</button>
         <p class='text-white'> Can't see me </p>`
 
         //for loop for adding to the html syntax
+        for (let i = 0; i<employees.length; i++) {
+            syntax += makeCard(employees[i]);
+        }
 
         //after that
-        syntax +=`</body>
+        syntax +=`</div> </div> </body>
         </html>`
 
         fs.writeFileSync('employee.html', syntax)

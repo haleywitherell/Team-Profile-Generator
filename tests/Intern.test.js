@@ -7,15 +7,15 @@ test('If we create a "new" Intern is should make a new object', () => {
 })
 
 test('Adding a string to the first paramater creates a value for the property school name of the object', () => {
-    const testObj = new Intern('OU')
+    const testObj = new Intern('school')
 
-    expect(testObj.school).toBe('OU')
+    expect(testObj.school).toBe('school')
 })
 
 test('Adding a string to the first paramater creates a value for the school name function of the object', () => {
-    const testObj = new Intern('OU')
+    const testObj = new Intern('school')
 
-    expect(testObj.getSchool()).toBe('OU')
+    expect(testObj.getSchool()).toBe('school')
 })
 
 test('Adding a string to the first paramater creates a value for the role function of the object', () => {

@@ -25,7 +25,7 @@ test('Adding a string to the first paramater creates a value for the property em
     expect(testObj.email).toBe('haley@gmail.com')
 })
 
-test('Adding a string to the first paramater creates a value for the property name of the object', () => {
+test('Adding a string to the first paramater creates a value for the property name function of the object', () => {
     const testObj = new Employee('Haley')
 
     expect(testObj.getName()).toBe('Haley')
