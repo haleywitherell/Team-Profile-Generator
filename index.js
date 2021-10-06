@@ -7,18 +7,19 @@ const util = require("util");
 
 function makeCard(employee) {
     return `
-        <div class="col-4>
+        <div class="col-4">
             <div class="card">
                 <div class="card-body">
                     <p class="card-title">${employee.type}</p>
-                    <p class="card-text">${employee.name}</p>
-                    <p class="card-text">${employee.id}</p>
-                    <p class="card-text">${employee.email}</p>
+                    <p class="card-text">Name: ${employee.name}</p>
+                    <p class="card-text">Id: ${employee.id}</p>
+                    <p class="card-text">Email: ${employee.email}</p>
                 </div>
             </div>
         </div>
     `;
-}
+};
+
 
 // add intern function 
 function addIntern() {
@@ -154,7 +155,7 @@ function mainMenu(){
 
 function generateHTML(){
     var syntax= `<!DOCTYPE html>
-    <html lang="en">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -163,9 +164,11 @@ function generateHTML(){
         <title>Team Profile</title>
     </head>
     <body>
-    <div class="container-fluid">
-    <div class="row">
-        <header class="jumbotron primary">My Team</header>`
+    <div class="jumbotron primary">
+    <p class="display-4 text-center">My Team</p> 
+    </div>
+        <div class="container-fluid">
+            <div class="row">`
 
         //for loop for adding to the html syntax
         for (let i = 0; i<employees.length; i++) {
@@ -173,8 +176,11 @@ function generateHTML(){
         }
 
         //after that
-        syntax +=`</div> </div> </body>
-        </html>`
+        syntax +=
+        `   </div>
+        </div> 
+    </body>
+</html>`
 
         fs.writeFileSync('employee.html', syntax)
 }
