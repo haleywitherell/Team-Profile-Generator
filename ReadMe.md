@@ -10,9 +10,6 @@ This project creates a team profile when you run node index in the command line 
 
 Install inquirer, fs and jest.
 
-## Usage Information
-
-
 ## Contribution Guidelines
 
 Haley Witherell
