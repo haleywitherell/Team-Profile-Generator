@@ -25,6 +25,8 @@ Enter npm run tests in terminal.
 
 Click the link below to see the walk thru video for this project.
 
+https://drive.google.com/file/d/1TuMf06pgh7064oDp9ebkbKqAehNsRr8K/view
+
 ## Questions
 
 Feel free to contact me with any questions. See my contact info below.

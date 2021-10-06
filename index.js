@@ -10,7 +10,7 @@ function makeCard(employee) {
         <div class="col-4">
             <div class="card">
                 <div class="card-body">
-                    <p class="card-title">${employee.type}</p>
+                    <p class="card-title text-center font-weight-bold">${employee.type}</p>
                     <p class="card-text">Name: ${employee.name}</p>
                     <p class="card-text">Id: ${employee.id}</p>
                     <p class="card-text">Email: ${employee.email}</p>
